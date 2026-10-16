@@ -23,6 +23,8 @@ enable_testing()
 
 # Define exchange_tests built from tests/setup_test.cpp.
 add_executable(exchange_tests tests/setup_test.cpp)
+# Connect the test executable to my src directory's headers.
+target_include_directories(exchange_tests PRIVATE src)
 # Connect the test executable to GTest.
 target_link_libraries(exchange_tests PRIVATE GTest::gtest_main)
 target_compile_options(exchange_tests PRIVATE -Wall -Wextra -Wpedantic)
