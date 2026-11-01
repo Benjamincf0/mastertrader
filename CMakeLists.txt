@@ -22,7 +22,9 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 # Define exchange_tests built from tests/setup_test.cpp.
-add_executable(exchange_tests tests/setup_test.cpp)
+add_executable(exchange_tests
+tests/setup_test.cpp
+src/engine/order_book.cpp)
 # Connect the test executable to my src directory's headers.
 target_include_directories(exchange_tests PRIVATE src)
 # Connect the test executable to GTest.
