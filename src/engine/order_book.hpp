@@ -28,5 +28,8 @@ struct OrderBook {
 
   // Constant time lookups when we need to remove or find an order.
   std::unordered_map<OrderId, OrderLocation> order_id_lookup;
+
+  // Adds orders that cannot be matched immediately to the order book.
+  void add_resting_order(const Order& order);
 };
 } // namespace exchange
