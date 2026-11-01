@@ -31,5 +31,8 @@ struct OrderBook {
 
   // Adds orders that cannot be matched immediately to the order book.
   void add_resting_order(const Order& order);
+
+  // Returns false if the order ID is not in this book.
+  bool cancel_order(OrderId id);
 };
 } // namespace exchange
